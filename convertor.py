@@ -1,3 +1,5 @@
+print("Description: This script will convert celsius temperature to Kelvin and Fahrenheit")
+
 print("Enter temperature in Celsius")
 celsius_value = input()
 celsius_value = float(celsius_value)
