@@ -2,20 +2,28 @@ from time import sleep
 
 username = "developer1"
 password = "hackme"
+auth_retries = 3
 
 print("Description: This program authorize user in system\n")
 
-input_username = input("Please enter username: ")
-input_password = input("Please enter password: ")
 
-is_username_valid = username == input_username
-is_password_valid = password == input_password
+while auth_retries > 0:
+    input_username = input("Please enter username: ")
+    input_password = input("Please enter password: ")
 
-if not (is_username_valid and is_password_valid):
-    if not is_username_valid:
-        print("Invalid username")
-    if not is_password_valid:
-        print("Invalid password")
+    is_username_valid = username == input_username
+    is_password_valid = password == input_password
+
+    if is_username_valid and is_password_valid:
+        break
+    else:
+        auth_retries -= 1
+        if not is_username_valid:
+            print("Incorrect username")
+        if not is_password_valid:
+            print("Incorrect password")
+else:
+    print("Auth retries exceeded")
     exit(1)
 
 
