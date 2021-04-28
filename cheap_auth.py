@@ -1,5 +1,3 @@
-from time import sleep
-
 print("Description: This program authorize user in system\n")
 
 fields = {
